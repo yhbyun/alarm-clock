@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>alarm clock</title>
+  <link href="./css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="title">Alarm Clock</div>
+
+<button id="btn-play">Play</button>
+<button id="btn-stop">Stop</button>
+
+<div id="equalizer"></div>
+
+<div id="container">
+  <div id="shadow">
+    <svg width="220px" height="245px" viewBox="0 0 220 245" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+    <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="shadowGradient">
+    <stop stop-color="#000000" stop-opacity="0.3" offset="0%"></stop>
+    <stop stop-color="#000000" stop-opacity="0" offset="100%"></stop>
+    </linearGradient>
+    </defs>
+    <path transform-origin="top" d="M20,0 L0,245 L220,245 L200,0 L20,0 Z" fill="url(#shadowGradient)"></path>
+    </svg>
+  </div>
+  <div id="clock">
+    <div class="hmark h-1"></div>
+    <div class="hmark h-2"></div>
+    <div class="hmark h-3 emp"></div>
+    <div class="hmark h-4"></div>
+    <div class="hmark h-5"></div>
+    <div class="hmark h-6 emp"></div>
+    <div class="hmark h-7"></div>
+    <div class="hmark h-8"></div>
+    <div class="hmark h-9 emp"></div>
+    <div class="hmark h-10"></div>
+    <div class="hmark h-11"></div>
+    <div class="hmark h-12 emp"></div>
+    <div id ="hours"></div>
+    <div id="minutes"></div>
+    <div id="seconds"></div>
+    <div id="center"></div>
+  </div>
+</div>
+
+<script>
+window.$ = window.jQuery = require('./js/jquery.min');
+</script>
+<script src="./js/mikulas.min.js"></script>
+<script src="./js/app.js"></script>
+</body>
+</html>

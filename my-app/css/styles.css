@@ -1,0 +1,144 @@
+.title {
+  font-family: "arial";
+  color: white;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+/* equalizer */
+#equalizer {
+  position:absolute;
+  bottom:10px;
+  left:10px;
+  width: 50%;
+  height: 100px;
+  overflow:hidden;
+}
+
+#equalizer .bar {
+  width: 20px;
+  float: left;
+  margin-bottom: 20px;
+  margin-left: 40px; 
+}
+
+#equalizer .bar .fill {
+  position: relative;
+  width: 100%;
+  background: orange;
+  -webkit-transition: all .3s ease;
+}
+
+/* clock */
+#container {
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  margin-top: 40px;
+  position: relative;
+}
+#clock {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  background: #EEE;
+  border-radius: 100%;
+  margin: auto;
+}
+#hours {
+  position: absolute;
+  width: 6px;
+  height: 54px;
+  background: #333;
+  top: 36px;
+  left: 87px;
+}
+#minutes {
+  position: absolute;
+  width: 4px;
+  height: 66px;
+  background: #333;
+  top: 24px;
+  left: 88px;
+}
+#seconds {
+  position: absolute;
+  width: 2px;
+  height: 76px;
+  background: #DD3131;
+  top: 14px;
+  left: 89px;
+}
+#center {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background: #DD3131;
+  top: 85px;
+  left: 85px;
+  border-radius: 100%;
+}
+#shadow {
+  -webkit-transform-origin: top;
+  position: absolute;
+  left: 140px;
+  top: 90px;
+  width: 220px;
+  height: 245px;
+}
+
+.hmark {
+  position: absolute;
+  width: 2px;
+  height: 6px;
+  background: #333;
+  top: 10px;
+  left: 89px;
+  -webkit-transform-origin: 50% 80px;
+}
+
+.emp {
+  width: 8px;
+  height: 8px;
+  left: 86px;
+  border-radius: 100%;
+}
+
+
+.h-1 {
+  -webkit-transform:rotate(30deg);
+}
+.h-2 {
+  -webkit-transform:rotate(60deg);
+}
+.h-3 {
+  -webkit-transform:rotate(90deg);
+}
+.h-4 {
+  -webkit-transform:rotate(120deg);
+}
+.h-5 {
+  -webkit-transform:rotate(150deg);
+}
+.h-6 {
+  -webkit-transform:rotate(180deg);
+}
+.h-7 {
+  -webkit-transform:rotate(210deg);
+}
+.h-8 {
+  -webkit-transform:rotate(240deg);
+}
+.h-9 {
+  -webkit-transform:rotate(270deg);
+}
+.h-10 {
+  -webkit-transform:rotate(300deg);
+}
+.h-11 {
+  -webkit-transform:rotate(330deg);
+}
+.h-12 {
+  -webkit-transform:rotate(360deg);
+}
+
