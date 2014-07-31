@@ -1,0 +1,29 @@
+{
+  "name": "alarm-clock",
+  "version": "0.1.0",
+  "homepage": "https://github.com/yhbyun/alarm-clock",
+  "authors": [
+    "YongHun Byun <yonghunbyun@gmail.com>"
+  ],
+  "description": "alarm clock",
+  "main": "main.js",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "platform": "Polymer/platform#~0.3.4",
+    "polymer": "Polymer/polymer#~0.3.4",
+    "core-elements": "Polymer/core-elements#~0.3.4",
+    "cool-clock": "Polymer/cool-clock#~0.3.0",
+    "paper-fab": "Polymer/paper-fab#~0.3.4",
+    "paper-icon-button": "Polymer/paper-icon-button#~0.3.4"
+  }
+}
