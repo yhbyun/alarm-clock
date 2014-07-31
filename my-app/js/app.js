@@ -4,54 +4,6 @@ var ipc     = require('ipc')
 
 var player = new Player('/Users/yhbyun/work/atom-shell/exam1/my-app/test.mp3');
 
-// Grab the shadow element
-var shadow = document.getElementById("shadow");
-
-// Custom function to calculate the shadow data from a Mikulas instance
-function getShadowData(clock) {
-  var opacity = 0.2, // default opacity/angle values
-      angle = -45;
-  if (clock.getElapsedMinutes() < 1140 && clock.getElapsedMinutes() > 300) {
-    // calculate opacity based on minutes elapsed today
-    opacity = (Math.sin((clock.getElapsedMinutes() / 4 - 90) * Math.PI / 180)).toFixed(2); // opacity best described by a sine function
-    opacity = opacity < 0.2 ? 0.2 : opacity; // we don't want the shadow opacity to be less than 0.2
-    // the angle varies from -90 to +90 during the "day"
-    angle = (((1 - (clock.getElapsedMinutes() - 300) / 840) * 180) - 90).toFixed(2);
-  }
-  return {
-    opacity: opacity,
-    angle: angle
-  };
-}
-
-// Custom function to set the shadow data
-function setShadow(data, clock) {
-  clock.rotateElement(shadow, data.angle);
-  shadow.style.opacity = data.opacity;
-}
-
-// Custom function to set the background
-function setBackground(minutes) {
-  var r = 76,
-      g = 107,
-      b = 169,
-      angle = minutes / 4 - 90, // used to calculate bg color variation
-      p = Math.sin(angle * Math.PI / 180), // yay! trigonometry again!
-      body = document.getElementsByTagName("body")[0], // grab the body element
-      rgbvalue = "rgb(" + Math.floor(r + 25 * p) + ',' + Math.floor(g + 36 * p) + ',' + Math.floor(b + 58 * p) + ")"; // calculate the rgb value based on the percentage (result of the sine function)
-  body.style.background = rgbvalue; // apply the value to the body element
-}
-
-// Create a new Mikulas instance and add a callback
-// to update the background and shadow
-var clock = new Mikulas("hours", "minutes", "seconds", function() {
-  setBackground(this.getElapsedMinutes());
-  setShadow(getShadowData(this), this);
-});
-
-// Start the clock
-clock.start();
-
 // equalizer
 var Equalizer  = {
   init: function(){

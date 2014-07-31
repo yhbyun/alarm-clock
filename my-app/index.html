@@ -3,54 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <title>alarm clock</title>
+  <script src="bower_components/platform/platform.js"></script>
+  <link rel="import" href="./bower_components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="./bower_components/font-roboto/roboto.html">
+  <link rel="import" href="./bower_components/core-header-panel/core-header-panel.html">
+  <link rel="import" href="./bower_components/cool-clock/cool-clock.html">
+  <link rel="import" href="./bower_components/core-icons/core-icons.html">
+  <link rel="import" href="./bower_components/core-icons/iconsets/av-icons.html">
+  <link rel="import" href="./bower_components/paper-icon-button/paper-icon-button.html">
   <link href="./css/styles.css" rel="stylesheet">
 </head>
 
-<body>
+<body fullbleed unresolved touch-action="auto">
 
-<div class="title">Alarm Clock</div>
+  <core-header-panel>
+    <core-toolbar id="mainheader">
+      <paper-icon-button id="navicon" icon="menu"></paper-icon-button>
+        <span flex>Alarm Clock</span>
+      <paper-icon-button id="searchbutton" icon="search"></paper-icon-button>
+    </core-toolbar>
 
-<button id="btn-play">Play</button>
-<button id="btn-stop">Stop</button>
+    <p><cool-clock skin="fancy" id="cool_clock"></cool-clock></p>
+    <p>
+      <paper-icon-button id="btn-play" icon="av:play-circle-outline"></paper-icon-button>
+      <paper-icon-button id="btn-stop" icon="av:pause-circle-outline"></paper-icon-button>
+    </p>
+    <div id="equalizer"></div>
 
-<div id="equalizer"></div>
-
-<div id="container">
-  <div id="shadow">
-    <svg width="220px" height="245px" viewBox="0 0 220 245" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-    <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="shadowGradient">
-    <stop stop-color="#000000" stop-opacity="0.3" offset="0%"></stop>
-    <stop stop-color="#000000" stop-opacity="0" offset="100%"></stop>
-    </linearGradient>
-    </defs>
-    <path transform-origin="top" d="M20,0 L0,245 L220,245 L200,0 L20,0 Z" fill="url(#shadowGradient)"></path>
-    </svg>
-  </div>
-  <div id="clock">
-    <div class="hmark h-1"></div>
-    <div class="hmark h-2"></div>
-    <div class="hmark h-3 emp"></div>
-    <div class="hmark h-4"></div>
-    <div class="hmark h-5"></div>
-    <div class="hmark h-6 emp"></div>
-    <div class="hmark h-7"></div>
-    <div class="hmark h-8"></div>
-    <div class="hmark h-9 emp"></div>
-    <div class="hmark h-10"></div>
-    <div class="hmark h-11"></div>
-    <div class="hmark h-12 emp"></div>
-    <div id ="hours"></div>
-    <div id="minutes"></div>
-    <div id="seconds"></div>
-    <div id="center"></div>
-  </div>
-</div>
+  </core-header-panel>
 
 <script>
 window.$ = window.jQuery = require('./js/jquery.min');
 </script>
-<script src="./js/mikulas.min.js"></script>
 <script src="./js/app.js"></script>
 </body>
 </html>
