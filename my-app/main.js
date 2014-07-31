@@ -12,7 +12,7 @@ app.commandLine.appendSwitch('enable-transparent-visuals');
 app.on('ready', function() {
   win = new BW({
     width  : 400,
-    height : 300,
+    height : 350,
     frame: false
   });
 
