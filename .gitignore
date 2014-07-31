@@ -3,3 +3,5 @@
 *.log
 binaries
 node_modules
+bower_components
+
