@@ -10,8 +10,13 @@
 - atom-shell v0.14.3
 - node.js 0.11.13
 - node package
-    - [node-lame](https://github.com/yhbyun/node-lame)
-    - [node-speaker](https://github.com/TooTallNate/node-speaker)
+  - [node-lame](https://github.com/yhbyun/node-lame)
+  - [node-speaker](https://github.com/TooTallNate/node-speaker)
+- polymer
+  - core-header-panel
+  - core-toolbar
+  - paper-icon-button
+  - cool-clock
 
 ## How to run
 
