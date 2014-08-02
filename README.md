@@ -18,28 +18,32 @@
   - paper-icon-button
   - cool-clock
 
-## How to run
-
-Compile node-lame & node-speaker
+## Getting Started
 
 ```
-$ cd my-app/node_modules
-$ git clone https://github.com/yhbyun/node-lame lame
-$ cd lame
+$ git clone https://github.com/yhbyun/alarm-clock.git
+
+$ cd alarm-clock/my-app
+$ mkdir node_modules && cd $_
+
+
+$ git clone https://github.com/yhbyun/node-lame --branch hotfixes/branch lame
+$ cd lame && npm install
 $ HOME=~/.atom-shell-gyp node-gyp rebuild --target=0.11.13 --arch=x64 --dist-url=https://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist
 
 $ cd ..
 $ git clone https://github.com/TooTallNate/node-speaker speaker
-$ cd speaker
+$ cd speaker && npm install
 $ HOME=~/.atom-shell-gyp node-gyp rebuild --target=0.11.13 --arch=x64 --dist-url=https://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist
 
 $ cd ..
 $ git clone https://github.com/jashkenas/underscore
-```
 
-run
+$ cd ..
+$ bower install
 
-```
-$ grunt
+$ cd ..
+$ npm install
+$ grunt run
 ```
 
