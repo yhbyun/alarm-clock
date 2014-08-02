@@ -2,7 +2,7 @@
 var ipc     = require('ipc')
   , Player  = require('./js/player');
 
-var player = new Player('/Users/yhbyun/work/atom-shell/exam1/my-app/test.mp3');
+var player = new Player('./my-app/Early Riser.mp3');
 
 // equalizer
 var Equalizer  = {
