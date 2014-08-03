@@ -4,6 +4,22 @@ var ipc     = require('ipc')
 
 var player = new Player('./my-app/Early Riser.mp3');
 
+// event: on playing
+player.on('playing',function(item){
+  Equalizer.show();
+  console.log('im playing... src:' + item);
+});
+
+player.on('playend',function(item){
+  Equalizer.hide();
+  console.log('src:' + item + ' play done');
+});
+
+player.on('stopped',function(item){
+  Equalizer.hide();
+  console.log('src:' + item + ' play stopped');
+});
+
 // equalizer
 var Equalizer  = {
   init: function(){
@@ -61,22 +77,6 @@ $(window).resize(function(){
 });
 
 document.getElementById('btn-play').onclick = function() {
-  // event: on playing
-  player.on('playing',function(item){
-    Equalizer.show();
-    console.log('im playing... src:' + item);
-  });
-
-  player.on('playend',function(item){
-    Equalizer.hide();
-    console.log('src:' + item + ' play done');
-  });
-
-  player.on('stopped',function(item){
-    Equalizer.hide();
-    console.log('src:' + item + ' play stopped');
-  });
-
   player.play(function (err, player) {
     console.log('playend!');
   });
