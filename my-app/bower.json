@@ -26,6 +26,9 @@
     "paper-fab": "Polymer/paper-fab#~0.3.4",
     "paper-icon-button": "Polymer/paper-icon-button#~0.3.4",
     "paper-dialog": "Polymer/paper-dialog#~0.3.4",
-    "clock-face": "~0.1.1"
+    "clock-face": "~0.1.1",
+    "later": "*",
+    "core-localstorage": "Polymer/core-localstorage#~0.3.4",
+    "paper-input": "Polymer/paper-input#~0.3.4"
   }
 }

@@ -16,8 +16,11 @@
   <link rel="import" href="./bower_components/paper-icon-button/paper-icon-button.html">
   <link rel="import" href="./bower_components/paper-dialog/paper-dialog-transition.html">
   <link rel="import" href="./bower_components/paper-dialog/paper-dialog.html">
+  <link rel="import" href="./bower_components/core-localstorage/core-localstorage.html">
+  <link rel="import" href="./bower_components/paper-input/paper-input.html">
   <link rel="stylesheet" href="./bower_components/clock-face/clock-face.css">
   <script src="./bower_components/clock-face/clock-face.js"></script>
+  <script src="./bower_components/later/later.min.js"></script>
   <link href="./css/styles.css" rel="stylesheet">
 </head>
 
@@ -45,8 +48,31 @@
     </p>
 
     <p class="schedule-box">
+      <my-schedule id="my-schedule" schedule="20 23 * * ? *"></my-schedule>
+    </p>
+
+    <polymer-element name="my-schedule" attributes="schedule">
+      <template>
+        <style>
+        paper-input {text-align:left}
+        </style>
+        <paper-input floatingLabel label="Enter Schedule" value="{{schedule}}"></paper-input>
+        <core-localstorage name="alarm-schedule" value="{{schedule}}"></core-localstorage>
+      </template>
+      <script>
+        Polymer('my-schedule', {
+          ready: function() {
+            this.schedule = this.schedule || [];
+          }
+        });
+      </script>
+    </polymer-element>
+
+    <!--
+    <p class="schedule-box">
       <paper-button icon="device:access-alarms" raisedButton class="colored" label="Change alarm" id="btn-alarm"></paper-button>
     </p>
+    -->
 
   </core-header-panel>
 

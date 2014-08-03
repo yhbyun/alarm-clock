@@ -20,6 +20,30 @@ player.on('stopped',function(item){
   console.log('src:' + item + ' play stopped');
 });
 
+$(function(){
+  //FIXME :this event never fires
+  $(window).bind('storage', function (e) {
+    console.log('storage changed');
+
+    var cron = localStorage.getItem('alarm-schedule');
+    console.log(cron);
+    if (cron) {
+      var textSched = later.parse.cron(cron);
+      var timer = later.setInterval(playMusic, textSched);
+    }
+  });
+
+  later.date.localTime();
+  var cron = localStorage.getItem('alarm-schedule');
+  if (! cron) cron = $('#my-schedule').attr('schedule');
+  console.log(cron);
+
+  if (cron) {
+    var textSched = later.parse.cron(cron);
+    var timer = later.setInterval(playMusic, textSched);
+  }
+});
+
 // equalizer
 var Equalizer  = {
   init: function(){
@@ -90,9 +114,11 @@ document.getElementById('btn-file').onclick = function() {
   ipc.send('asynchronous-message', 'select-file');
 };
 
+/*
 document.getElementById('btn-alarm').onclick = function() {
   toggleDialog();
 };
+*/
 
 ipc.on('asynchronous-reply', function(arg) {
   //TODO : chek if file exists and it is  mp3 file
@@ -107,4 +133,8 @@ function displayMP3Title(ID3) {
 function toggleDialog() {
   var dialog = document.querySelector('paper-dialog');
   dialog.toggle();
+}
+
+function playMusic() {
+  player.play();
 }
