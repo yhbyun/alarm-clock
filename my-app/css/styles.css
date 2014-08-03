@@ -1,5 +1,9 @@
-body {
-  font-family: sans-serif;
+ body {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 core-header-panel {
@@ -43,6 +47,19 @@ paper-button[raisedButton].colored::shadow #focusBg {
   background: #3367d6;
 }
 
+
+ paper-dialog {
+  width: 50%;
+  min-width: 350px;
+}
+
+paper-dialog paper-button {
+  font-weight: bold;
+}
+
+paper-button[autofocus] {
+  color: #4285f4;
+}
 
 /* equalizer */
 #equalizer {

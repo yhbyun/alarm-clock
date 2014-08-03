@@ -12,7 +12,10 @@
   <link rel="import" href="./bower_components/core-icons/iconsets/av-icons.html">
   <link rel="import" href="./bower_components/core-icons/iconsets/icons.html">
   <link rel="import" href="./bower_components/core-icons/iconsets/hardware-icons.html">
+  <link rel="import" href="./bower_components/core-icons/iconsets/device-icons.html">
   <link rel="import" href="./bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="./bower_components/paper-dialog/paper-dialog-transition.html">
+  <link rel="import" href="./bower_components/paper-dialog/paper-dialog.html">
   <link href="./css/styles.css" rel="stylesheet">
 </head>
 
@@ -36,7 +39,18 @@
       <paper-button icon="hardware:headset" raisedButton class="colored" label="Change MP3" id="btn-file"></paper-button>
     </p>
 
+    <p class="schedule-box">
+      <paper-button icon="device:access-alarms" raisedButton class="colored" label="Change alarm" id="btn-alarm"></paper-button>
+    </p>
+
   </core-header-panel>
+
+  <paper-dialog heading="Schedule" transition="paper-dialog-transition-center">
+    <p>Lorem ipsum ....</p>
+    <p>Id qui scripta ...</p>
+    <paper-button label="Decline" affirmative></paper-button>
+    <paper-button label="Accept" affirmative autofocus></paper-button>
+  </paper-dialog>
 
 <script>
 window.$ = window.jQuery = require('./js/jquery.min');

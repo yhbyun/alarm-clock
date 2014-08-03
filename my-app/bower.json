@@ -24,6 +24,7 @@
     "core-elements": "Polymer/core-elements#~0.3.4",
     "cool-clock": "Polymer/cool-clock#~0.3.0",
     "paper-fab": "Polymer/paper-fab#~0.3.4",
-    "paper-icon-button": "Polymer/paper-icon-button#~0.3.4"
+    "paper-icon-button": "Polymer/paper-icon-button#~0.3.4",
+    "paper-dialog": "Polymer/paper-dialog#~0.3.4",
   }
 }

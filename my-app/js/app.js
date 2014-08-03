@@ -90,6 +90,10 @@ document.getElementById('btn-file').onclick = function() {
   ipc.send('asynchronous-message', 'select-file');
 };
 
+document.getElementById('btn-alarm').onclick = function() {
+  toggleDialog();
+};
+
 ipc.on('asynchronous-reply', function(arg) {
   //TODO : chek if file exists and it is  mp3 file
   player.song = arg;
@@ -100,3 +104,7 @@ function displayMP3Title(ID3) {
   $('#lbl-mp3').text(ID3.title);
 }
 
+function toggleDialog() {
+  var dialog = document.querySelector('paper-dialog');
+  dialog.toggle();
+}
