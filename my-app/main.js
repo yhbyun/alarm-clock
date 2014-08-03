@@ -3,6 +3,8 @@ var app      = require('app')
   , MenuItem = require('menu-item')
   , BW       = require('browser-window')
   , ipc      = require('ipc')
+  , dialog   = require('dialog')
+  , path     = require('path')
   , win;
 
 var volume = 35;
@@ -12,7 +14,7 @@ app.commandLine.appendSwitch('enable-transparent-visuals');
 app.on('ready', function() {
   win = new BW({
     width  : 400,
-    height : 350,
+    height : 600,
     frame: false
   });
 
@@ -26,7 +28,20 @@ app.on('ready', function() {
   var menu_tmpl = [{
     lable: 'Atom Shell',
     submenu: [{
-      label: 'reload',
+      label: 'Preferences...',
+      accelerator: 'Command+,',
+      click: function() {
+        dialog.showMessageBox({
+          type: 'warning',
+          title: 'Waring',
+          buttons: ['OK'],
+          message: 'not implemented yet'
+        });
+      }
+    }, {
+      type: 'separator'
+    }, {
+      label: 'Reload',
       accelerator: 'Command+R',
       click: function() {
         win.reload();
@@ -37,6 +52,13 @@ app.on('ready', function() {
       click: function() {
         win.toggleDevTools();
       }
+    }, {
+      type: 'separator'
+    },
+    {
+      label: 'Quit',
+      accelerator: 'Command+Q',
+      click: function() { app.quit(); }
     }]
   }];
   menu = Menu.buildFromTemplate(menu_tmpl);
