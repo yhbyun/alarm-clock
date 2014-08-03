@@ -27,7 +27,6 @@ function Player(song, params) {
 
 util.inherits(Player, events.EventEmitter);
 
-
 Player.prototype.play = function(done) {
   var self = this;
 
@@ -75,6 +74,20 @@ Player.prototype.stop = function() {
   return false;
 }
 
+Player.prototype.getID3 = function(callback) {
+  if (! this.song) return false;
+
+  var self = this;
+  var file = fs.createReadStream(this.song);
+  var decoder = new lame.Decoder();
+  decoder.on('id3v1', function (id3) {
+    callback(id3);
+  });
+  decoder.on('id3v2', function (id3) {
+    callback(id3);
+  });
+  file.pipe(decoder);
+}
 
 /**
  *

@@ -3,8 +3,8 @@ var ipc     = require('ipc')
   , Player  = require('./js/player');
 
 var player = new Player('./my-app/Early Riser.mp3');
+player.getID3(displayMP3Title);
 
-// event: on playing
 player.on('playing',function(item){
   Equalizer.show();
   console.log('im playing... src:' + item);
@@ -85,4 +85,18 @@ document.getElementById('btn-play').onclick = function() {
 document.getElementById('btn-stop').onclick = function() {
   player.stop();
 };
+
+document.getElementById('btn-file').onclick = function() {
+  ipc.send('asynchronous-message', 'select-file');
+};
+
+ipc.on('asynchronous-reply', function(arg) {
+  //TODO : chek if file exists and it is  mp3 file
+  player.song = arg;
+  player.getID3(displayMP3Title);
+});
+
+function displayMP3Title(ID3) {
+  $('#lbl-mp3').text(ID3.title);
+}
 

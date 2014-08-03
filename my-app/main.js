@@ -77,6 +77,26 @@ app.on('ready', function() {
 });
 
 ipc.on('asynchronous-message', function(event, arg) {
-  ///console.log(arg);  // prints "ping"
+  var files, file;
+
+  switch (arg) {
+    case 'select-file':
+      if (files = dialog.showOpenDialog({
+        'properties' :  ['openFile']
+      })) {
+        file = files[0];
+        if (path.extname(file) === '.mp3') {
+          event.sender.send('asynchronous-reply', file);
+        } else {
+          dialog.showMessageBox({
+            type: 'warning',
+            title: 'Waring',
+            buttons: ['OK'],
+            message: '\'' + file + '\'' + ' is not a mp3 file.'
+          });
+        }
+      }
+      break;
+  }
 });
 
