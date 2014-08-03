@@ -29,7 +29,7 @@ $(function(){
     console.log(cron);
     if (cron) {
       var textSched = later.parse.cron(cron);
-      var timer = later.setInterval(playMusic, textSched);
+      var timer = later.setTimeout(playMusic, textSched);
     }
   });
 
@@ -40,7 +40,7 @@ $(function(){
 
   if (cron) {
     var textSched = later.parse.cron(cron);
-    var timer = later.setInterval(playMusic, textSched);
+    var timer = later.setTimeout(playMusic, textSched);
   }
 });
 
