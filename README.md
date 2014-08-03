@@ -46,6 +46,15 @@ $ npm install
 $ grunt run
 ```
 
-## Test MP3 File
+## TODO
 
-`Early Riser.mp3` from `http://incompetech.com/music/royalty-free/index.html` is royalty free.
+- detect localstorage change
+- scheduling
+  - user friendly setting UI
+  - multiple scheduling
+- audio visualization
+
+#### Test MP3 File
+
+`Early Riser.mp3` file is included in this repo. This is from `http://incompetech.com/music/royalty-free/index.html`, which is royalty free.
+
