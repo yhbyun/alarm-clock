@@ -7,7 +7,7 @@
 
 ## Used Software
 
-- atom-shell v0.15.1
+- atom-shell v0.15.2
 - node.js 0.11.13
 - node package
   - [node-lame](https://github.com/yhbyun/node-lame)
