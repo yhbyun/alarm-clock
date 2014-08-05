@@ -2,7 +2,7 @@
 
 > Alarm clock desktop application built with `atom-shell`.
 
-<img src="https://raw.githubusercontent.com/yhbyun/resources/master/alarm-clock/screenshot3.png" width="500">
+<img src="https://raw.githubusercontent.com/yhbyun/resources/master/alarm-clock/screenshot4.png" width="500">
 
 
 ## Used Software
