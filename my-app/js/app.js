@@ -25,8 +25,7 @@ $(function(){
   $(window).bind('storage', function (e) {
     console.log('storage changed');
 
-    var cron = localStorage.getItem('alarm-schedule');
-    console.log(cron);
+    var cron = JSON.parse(localStorage.getItem('alarm-schedule'));
     if (cron) {
       var textSched = later.parse.cron(cron);
       var timer = later.setTimeout(playMusic, textSched);
@@ -34,7 +33,7 @@ $(function(){
   });
 
   later.date.localTime();
-  var cron = localStorage.getItem('alarm-schedule');
+  var cron = JSON.parse(localStorage.getItem('alarm-schedule'));
   if (! cron) cron = $('#my-schedule').attr('schedule');
   console.log(cron);
 
