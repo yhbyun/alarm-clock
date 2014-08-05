@@ -53,7 +53,7 @@ $ grunt run
 
 ## TODO
 
-- detect localstorage change
+- ~~detect localstorage change~~
 - scheduling
   - user friendly setting UI
   - multiple scheduling
