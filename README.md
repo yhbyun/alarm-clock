@@ -15,8 +15,13 @@
 - [polymer](http://www.polymer-project.org/)
   - core-header-panel
   - core-toolbar
+  - core-localstorage
   - paper-icon-button
+  - paper-input
+  - paper-dialog
   - cool-clock
+- javascript library
+  - [later.js](http://bunkat.github.io/later/)
 
 ## Getting Started
 
