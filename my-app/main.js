@@ -26,7 +26,7 @@ app.on('ready', function() {
   win.show();
 
   var menu_tmpl = [{
-    lable: 'Atom Shell',
+    label: 'Alarm Clock',
     submenu: [{
       label: 'Preferences...',
       accelerator: 'Command+,',
