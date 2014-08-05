@@ -29,6 +29,8 @@
     "clock-face": "~0.1.1",
     "later": "*",
     "core-localstorage": "Polymer/core-localstorage#~0.3.4",
-    "paper-input": "Polymer/paper-input#~0.3.4"
+    "paper-input": "Polymer/paper-input#~0.3.4",
+    "core-item": "Polymer/core-item#~0.3.4",
+    "core-animation": "Polymer/core-animation#~0.3.4"
   }
 }
