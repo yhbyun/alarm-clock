@@ -21,27 +21,38 @@ player.on('stopped',function(item){
 });
 
 $(function(){
-  //FIXME :this event never fires
-  $(window).bind('storage', function (e) {
+  later.date.localTime();
+
+  $('my-schedule').bind('scheduleChange', function(e) {
     console.log('storage changed');
 
     var cron = JSON.parse(localStorage.getItem('alarm-schedule'));
     if (cron) {
-      var textSched = later.parse.cron(cron);
-      var timer = later.setTimeout(playMusic, textSched);
+      setSchedule(cron);
     }
   });
 
-  later.date.localTime();
   var cron = JSON.parse(localStorage.getItem('alarm-schedule'));
   if (! cron) cron = $('#my-schedule').attr('schedule');
-  console.log(cron);
-
   if (cron) {
-    var textSched = later.parse.cron(cron);
-    var timer = later.setTimeout(playMusic, textSched);
+    setSchedule(cron);
   }
 });
+
+function setSchedule(cron) {
+  var textSched = later.parse.cron(cron, true);
+  var next = later.schedule(textSched).next(10, new Date());
+  console.log(next);
+  var timer = later.setTimeout(playMusic, textSched);
+
+  var animation1 = document.getElementById('fade-animation');
+  animation1.target = document.getElementById('inp-next');
+  var animation2 = document.getElementById('scale-animation');
+  animation2.target = document.getElementById('inp-next');
+  animation1.play();
+  $('#inp-next').val(next[0]);
+  animation2.play();
+}
 
 // equalizer
 var Equalizer  = {
@@ -136,4 +147,13 @@ function toggleDialog() {
 
 function playMusic() {
   player.play();
+
+  //FIXME: kill timer
+  var timer = setTimeout(function() {
+    var cron = JSON.parse(localStorage.getItem('alarm-schedule'));
+    if (cron) {
+      setSchedule(cron);
+    }
+    clearTimeout(timer);
+  }, 1000);
 }

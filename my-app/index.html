@@ -8,6 +8,9 @@
   <link rel="import" href="./bower_components/font-roboto/roboto.html">
   <link rel="import" href="./bower_components/core-header-panel/core-header-panel.html">
   <link rel="import" href="./bower_components/cool-clock/cool-clock.html">
+  <link rel="import" href="./bower_components/core-animation/core-animation.html">
+  <link rel="import" href="./bower_components/core-animation/core-animation-group.html">
+  <link rel="import" href="./bower_components/core-item/core-item.html">
   <link rel="import" href="./bower_components/core-icons/core-icons.html">
   <link rel="import" href="./bower_components/core-icons/iconsets/av-icons.html">
   <link rel="import" href="./bower_components/core-icons/iconsets/icons.html">
@@ -48,10 +51,11 @@
     </p>
 
     <p class="schedule-box">
-      <my-schedule id="my-schedule" schedule="20 23 * * ? *"></my-schedule>
+      <my-schedule id="my-schedule" schedule="0 0 12 * * ? *"></my-schedule>
+      <paper-input id="inp-next" floatingLabel disabled="true" label="Next Alarm" value="unknown"></paper-input>
     </p>
 
-    <polymer-element name="my-schedule" attributes="schedule">
+    <polymer-element name="my-schedule" attributes="schedule" on-change="{{changeHandler}}">
       <template>
         <style>
         paper-input {text-align:left}
@@ -63,10 +67,42 @@
         Polymer('my-schedule', {
           ready: function() {
             this.schedule = this.schedule || [];
+          },
+          changeHandler: function(event, detail, sender) {
+            this.fire('scheduleChange', {msg: 'schedule changed'});
           }
         });
       </script>
     </polymer-element>
+
+      <core-animation id="fade-animation" duration="300">
+        <core-animation-keyframe>
+          <core-animation-prop name="opacity" value="1">
+          </core-animation-prop>
+        </core-animation-keyframe>
+        <core-animation-keyframe>
+          <core-animation-prop name="opacity" value="0.3">
+          </core-animation-prop>
+        </core-animation-keyframe>
+        <core-animation-keyframe>
+          <core-animation-prop name="opacity" value="1">
+          </core-animation-prop>
+        </core-animation-keyframe>
+      </core-animation>
+      <core-animation id="scale-animation" duration="300">
+        <core-animation-keyframe>
+          <core-animation-prop name="transform" value="scale(1)">
+          </core-animation-prop>
+        </core-animation-keyframe>
+        <core-animation-keyframe>
+          <core-animation-prop name="transform" value="scale(1.2)">
+          </core-animation-prop>
+        </core-animation-keyframe>
+        <core-animation-keyframe>
+          <core-animation-prop name="transform" value="scale(1)">
+          </core-animation-prop>
+        </core-animation-keyframe>
+      </core-animation>
 
     <!--
     <p class="schedule-box">

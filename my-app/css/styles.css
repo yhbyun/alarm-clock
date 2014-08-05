@@ -32,6 +32,10 @@ p {
   padding:3px;
 }
 
+#inp-next {
+  text-align:left;
+}
+
 paper-button[raisedButton].colored {
   background: #4285f4;
   color: #fff;
@@ -48,7 +52,7 @@ paper-button[raisedButton].colored::shadow #focusBg {
 }
 
 
- paper-dialog {
+paper-dialog {
   width: 50%;
   min-width: 350px;
 }
