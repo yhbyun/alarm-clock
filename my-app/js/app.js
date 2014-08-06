@@ -127,6 +127,14 @@ document.getElementById('btn-file').onclick = function() {
   ipc.send('asynchronous-message', 'select-file');
 };
 
+document.getElementById('btn-capture').onclick = function() {
+  remote.getCurrentWindow().capturePage(function(buf) {
+    remote.require('fs').writeFile('/tmp/screenshot.png', buf, function(err) {
+      console.log(err);
+    });
+  });
+};
+
 /*
 document.getElementById('btn-alarm').onclick = function() {
   toggleDialog();
