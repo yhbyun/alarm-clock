@@ -1,6 +1,9 @@
 
 var ipc     = require('ipc')
-  , Player  = require('./js/player');
+  , Player  = require('./js/player')
+  , remote = require('remote');
+
+console.log('App version : ' + remote.require('app').getVersion());
 
 var player = new Player('./my-app/Early Riser.mp3');
 player.getID3(displayMP3Title);
