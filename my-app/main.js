@@ -15,7 +15,8 @@ app.on('ready', function() {
   win = new BW({
     width  : 400,
     height : 600,
-    frame: false
+    frame: false,
+    title: 'Alarm Clock'
   });
 
   win.on('closed', function() {
