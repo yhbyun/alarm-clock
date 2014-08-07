@@ -8,6 +8,7 @@
 
 ![](https://raw.githubusercontent.com/yhbyun/resources/master/alarm-clock/alarm-clock-system.png)
 
+
 ## Used Software
 
 - atom-shell v0.15.2
@@ -61,6 +62,11 @@ $ grunt run
   - user friendly setting UI
   - multiple scheduling
 - audio visualization
+
+## Reference
+
+- [Atom Shell & Alarm Clock](https://rivario.com/slide/atom-shell)
+
 
 #### Test MP3 File
 
