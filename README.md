@@ -4,6 +4,9 @@
 
 <img src="https://raw.githubusercontent.com/yhbyun/resources/master/alarm-clock/screenshot4.png" width="500">
 
+## SW Architecture
+
+![](https://raw.githubusercontent.com/yhbyun/resources/master/alarm-clock/alarm-clock-system.png)
 
 ## Used Software
 
