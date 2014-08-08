@@ -83,7 +83,9 @@ ipc.on('asynchronous-message', function(event, arg) {
   switch (arg) {
     case 'select-file':
       if (files = dialog.showOpenDialog({
-        'properties' :  ['openFile']
+        title: 'Select MP3 File',
+        filters: [{name: "MP3 Files", extensions:['mp3']}],
+        properties :  ['openFile']
       })) {
         file = files[0];
         if (path.extname(file) === '.mp3') {
