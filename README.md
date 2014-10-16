@@ -4,14 +4,16 @@
 
 <img src="https://raw.githubusercontent.com/yhbyun/resources/master/alarm-clock/screenshot4.png" width="500">
 
-## SW Architecture
+## Architecture
+
+Below is a simple diagram of how alert clock works.
 
 ![](https://raw.githubusercontent.com/yhbyun/resources/master/alarm-clock/alarm-clock-system.png)
 
 
 ## Used Software
 
-- atom-shell v0.15.5
+- atom-shell v0.18.0
 - node.js 0.11.13
 - node package
   - [node-lame](https://github.com/yhbyun/node-lame)
